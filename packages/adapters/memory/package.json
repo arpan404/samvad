@@ -1,0 +1,28 @@
+{
+  "name": "@samvad/adapter-memory",
+  "version": "0.0.0",
+  "description": "In-memory infrastructure adapter for Samvad.",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --sourcemap --clean",
+    "clean": "rm -rf dist coverage .turbo",
+    "dev": "tsup src/index.ts --format esm --dts --sourcemap --watch",
+    "lint": "biome check .",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@samvad/core": "workspace:*"
+  }
+}
